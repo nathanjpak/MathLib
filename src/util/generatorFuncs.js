@@ -7,6 +7,7 @@ export const genArith = (count, updateState) => {
   axios({
     method: "get",
     url: `/gen/arith${queryString}`,
+    // url: "https://mathlib.cyclic.app/gen/arith",
   })
     .then((response) => {
       problems = response.data;
@@ -21,6 +22,7 @@ export const genLinear = (count, updateState) => {
   axios({
     method: "get",
     url: `/gen/alg/linear${queryString}`,
+    // url: "https://repulsive-calf-gabardine.cyclic.app/gen/alg/linear",
   })
     .then((response) => {
       problems = response.data;

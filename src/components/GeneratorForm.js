@@ -13,7 +13,7 @@ const GeneratorForm = () => {
   const toggleHideSolutions = () => setSolutions(!hideSolutions);
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     const { topic, problemsCount } = data;
     switch (topic) {
       case "linearEquations":
