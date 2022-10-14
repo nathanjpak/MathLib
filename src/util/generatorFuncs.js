@@ -1,12 +1,14 @@
 import axios from "axios";
 
+const API_ENDPOINT = process.env.REACT_APP_GEN_API_ENDPOINT;
+
 export const genArith = (count, updateState) => {
   let problems = [];
   let queryString = "?";
   if (count) queryString = `${queryString}count=${count}`
   axios({
     method: "get",
-    url: `/gen/arith${queryString}`,
+    url: `${API_ENDPOINT}/gen/arith${queryString}`,
     // url: "https://mathlib.cyclic.app/gen/arith",
   })
     .then((response) => {
@@ -21,7 +23,7 @@ export const genLinear = (count, updateState) => {
   if (count) queryString = `${queryString}count=${count}`
   axios({
     method: "get",
-    url: `/gen/alg/linear${queryString}`,
+    url: `${API_ENDPOINT}/gen/alg/linear${queryString}`,
     // url: "https://repulsive-calf-gabardine.cyclic.app/gen/alg/linear",
   })
     .then((response) => {
