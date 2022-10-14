@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_ENDPOINT = process.env.REACT_APP_GEN_API_ENDPOINT;
+const API_ENDPOINT = process.env.REACT_APP_GEN_API_ENDPOINT || "https://mathlib.cyclic.app";
 
 export const genArith = (count, updateState) => {
   let problems = [];
