@@ -4,6 +4,7 @@ const API_ENDPOINT = process.env.REACT_APP_GEN_API_ENDPOINT || "https://mathlib.
 
 export const genArith = (count, updateState) => {
   let problems = [];
+  updateState(problems);
   let queryString = "?";
   if (count) queryString = `${queryString}count=${count}`
   axios({
@@ -19,6 +20,7 @@ export const genArith = (count, updateState) => {
 
 export const genLinear = (count, updateState) => {
   let problems = [];
+  updateState(problems);
   let queryString = "?";
   if (count) queryString = `${queryString}count=${count}`
   axios({
