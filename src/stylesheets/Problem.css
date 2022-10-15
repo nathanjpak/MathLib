@@ -1,0 +1,12 @@
+.problemTopRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  margin-bottom: 0.5em;
+}
+
+button {
+  padding: 0.25em 0.25em;
+}
