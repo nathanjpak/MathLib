@@ -11,9 +11,26 @@
   display: grid;
   grid-column: 2 / span 3;
   grid-row: 3;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0.75em 0.75em;
   margin-top: 0.75em;
+}
+
+@media (min-width: 800px) {
+  .generated-problems {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .generated-problems {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1600px) {
+  .generated-problems {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .form-div-50 {
