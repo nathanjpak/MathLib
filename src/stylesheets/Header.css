@@ -1,0 +1,18 @@
+.login-button {
+  background-color: #87a2fb;
+  color: white;
+  padding: 0.5em 1em;
+  margin-left: auto;
+}
+
+.title {
+  margin-left: auto;
+  font-size: 24px;
+  align-self: center;
+}
+
+.m {
+  background-color: #87a2fb;
+  color: #6f38c5;
+  padding: 0.1em 0.1em;
+}

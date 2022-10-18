@@ -1,5 +1,6 @@
 // import { MathJaxContext } from "better-react-mathjax";
 import GeneratorForm from './components/GeneratorForm';
+import Header from './components/Header';
 
 // const config = {
 //   loader: { load: ["[tex]/html"] },
@@ -19,6 +20,7 @@ import GeneratorForm from './components/GeneratorForm';
 const App = () => {
   return (
     <div className="container">
+      <Header />
       <GeneratorForm />
     </div>    
   );
