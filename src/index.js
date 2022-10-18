@@ -1,8 +1,9 @@
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { RouterProvider } from 'react-router-dom';
 import { MathJaxContext } from "better-react-mathjax";
+import router from './Router';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -24,7 +25,7 @@ const config = {
 root.render(
   <React.StrictMode>
     <MathJaxContext version={3} config={config} onError={(error) => console.log(error)}>
-      <App />
+      <RouterProvider router={router}/>
     </MathJaxContext>
   </React.StrictMode>
 );

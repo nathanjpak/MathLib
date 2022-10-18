@@ -1,29 +1,15 @@
-// import { MathJaxContext } from "better-react-mathjax";
-import GeneratorForm from './components/GeneratorForm';
-import Header from './components/Header';
-
-// const config = {
-//   loader: { load: ["[tex]/html"] },
-//   tex: {
-//     packages: { "[+]": ["html"] },
-//     inlineMath: [
-//       ["$", "$"],
-//       ["\\(", "\\)"]
-//     ],
-//     displayMath: [
-//       ["$$", "$$"],
-//       ["\\[", "\\]"]
-//     ]
-//   }
-// };
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
 
 const App = () => {
+
   return (
     <div className="container">
       <Header />
-      <GeneratorForm />
-    </div>    
-  );
-}
+      <Outlet />
+    </div>
+  )
+};
 
 export default App;
