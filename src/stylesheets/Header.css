@@ -1,4 +1,5 @@
 .login-button {
+  border-bottom-right-radius: 1em;
   background-color: #87a2fb;
   color: white;
   padding: 0.5em 1em;
