@@ -11,7 +11,6 @@ const Header = () => {
   };
   const handleLoginClick = () => {
     navigate("/login");
-    console.log(onLoginPage);
   };
 
   return (
