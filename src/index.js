@@ -5,6 +5,10 @@ import { RouterProvider } from 'react-router-dom';
 import { MathJaxContext } from "better-react-mathjax";
 import router from './Router';
 
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const config = {

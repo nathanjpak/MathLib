@@ -2,8 +2,6 @@ import axios from "axios";
 
 const API_ENDPOINT = process.env.REACT_APP_SERVER_API_ENDPOINT;
 
-axios.defaults.withCredentials=true;
-
 export const login = (data) => {
   return axios({
     method: "post",
