@@ -14,7 +14,7 @@ const App = () => {
     // console.log("Effect fired!");
     fetchUser()
       .then((response) => {
-        setCurrentUser(response);
+        setCurrentUser(response.data);
       })
   }, []);
 

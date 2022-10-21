@@ -1,5 +1,5 @@
 import "../stylesheets/Login.css";  
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
@@ -14,9 +14,13 @@ const Login = () => {
   const [ invalidCreds, setInvalidCreds ] = useState(false);
   const { currentUser, setCurrentUser } = useContext(currentUserContext);
 
+  useEffect(() => {
+    if (currentUser) navigate("/");
+  }, [currentUser, navigate]);
+
   const onSubmit = (data) => {
     if (currentUser) {
-      console.log("Already Logged in!");
+      alert("Already Logged in!");
       navigate("/");
     }
     login(data)
