@@ -22,6 +22,7 @@ const Login = () => {
     if (currentUser) {
       alert("Already Logged in!");
       navigate("/");
+      return;
     }
     login(data)
       .then((response) => {
@@ -36,6 +37,10 @@ const Login = () => {
       .catch((err) => setInvalidCreds(true));
   }
 
+  const handleAccountClick = () => {
+    navigate("/signup");
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="login-form">
       <div className="login-col-2">
@@ -46,8 +51,8 @@ const Login = () => {
         <input className="input-100" type="password" {...register("password")}/>
         {invalidCreds && (<div className="login-error">Invalid username or password.</div>)}
         <div className="flex-row">
-          <button type="submit flex-no-grow">Submit</button>
-          <button type="button flex-no-grow">Create an Account</button>
+          <button type="submit" className="flex-no-grow">Submit</button>
+          <button type="button" className="flex-no-grow" onClick={handleAccountClick}>Create an Account</button>
         </div>
         {/* <button type="button" onClick={handleClick}>Get users</button>
         <button type="button" onClick={handleLogout}>Logout</button> */}
