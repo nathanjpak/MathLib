@@ -70,3 +70,12 @@ button {
 .input-25 {
   width: 25%;
 }
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-no-grow {
+  flex-grow: 0;
+}

@@ -1,5 +1,5 @@
 import "../stylesheets/Login.css";  
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
@@ -14,9 +14,9 @@ const Login = () => {
   const [ invalidCreds, setInvalidCreds ] = useState(false);
   const { currentUser, setCurrentUser } = useContext(currentUserContext);
 
-  useEffect(() => {
-    if (currentUser) navigate("/");
-  }, [currentUser, navigate]);
+  // useEffect(() => {
+  //   if (currentUser) navigate("/");
+  // }, [currentUser, navigate]);
 
   const onSubmit = (data) => {
     if (currentUser) {
@@ -45,7 +45,10 @@ const Login = () => {
         <label>Password</label>
         <input className="input-100" type="password" {...register("password")}/>
         {invalidCreds && (<div className="login-error">Invalid username or password.</div>)}
-        <button type="submit">Submit</button>
+        <div className="flex-row">
+          <button type="submit flex-no-grow">Submit</button>
+          <button type="button flex-no-grow">Create an Account</button>
+        </div>
         {/* <button type="button" onClick={handleClick}>Get users</button>
         <button type="button" onClick={handleLogout}>Logout</button> */}
       </div>
