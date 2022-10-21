@@ -10,6 +10,7 @@ export const genArith = (count, updateState) => {
   axios({
     method: "get",
     url: `${API_ENDPOINT}/gen/arith${queryString}`,
+    withCredentials: false,
   })
     .then((response) => {
       problems = response.data;
@@ -25,6 +26,7 @@ export const genLinear = (count, updateState) => {
   axios({
     method: "get",
     url: `${API_ENDPOINT}/gen/alg/linear${queryString}`,
+    withCredentials: false,
   })
     .then((response) => {
       problems = response.data;

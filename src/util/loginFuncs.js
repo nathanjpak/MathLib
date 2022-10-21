@@ -29,9 +29,9 @@ export const getUsers = () => {
 }
 
 export const logout = () => {
-  axios({
+  return axios({
     method: "post",
     url: `${API_ENDPOINT}/auth/logout`,
   })
-    .then((response) => console.log(response))
+    // .then((response) => console.log(response))
 }

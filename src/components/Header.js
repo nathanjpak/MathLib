@@ -1,9 +1,14 @@
 import "../stylesheets/Header.css";
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { currentUserContext } from "../currentUserContext";
+import ProfileDropdown from "./ProfileDropdown";
 
 const Header = () => {
   const navigate = useNavigate();
+  const { currentUser } = useContext(currentUserContext);
+
   const onLoginPage = (window.location.pathname === "/login");
 
   const handleTitleClick = () => {
@@ -16,7 +21,8 @@ const Header = () => {
   return (
     <div className="header">
       <div className="title" onClick={handleTitleClick}><p><span className="m">M</span>athLib</p></div>
-      {!onLoginPage && (<button className="login-button" onClick={handleLoginClick}>Login</button>)}
+      {!onLoginPage && !currentUser && (<button className="login-button" onClick={handleLoginClick}>Login</button>)}
+      {currentUser && (<ProfileDropdown />)}
     </div>
   )
 }

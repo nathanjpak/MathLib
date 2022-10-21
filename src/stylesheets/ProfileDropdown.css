@@ -1,0 +1,31 @@
+.dropdown-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: absolute;
+  right: 0;
+  top: 62px;
+  width: 100%;
+  height: calc(100vh - 62px);
+  z-index: 5;
+  font-size: xx-large;
+}
+
+@media (min-width: 800px) {
+  .dropdown-menu {
+    width: 25%;
+    height: fit-content;
+    font-size: large;
+  }
+}
+
+.dropdown-menu-button,
+.logout-button {
+  width: 100%;
+  border-radius: 0;
+}
+
+.dropdown-menu-button {
+  background-color: #87a2fb;
+  color: white;
+  border: 4px solid #6f38c5;
+}
