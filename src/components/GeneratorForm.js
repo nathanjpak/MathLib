@@ -1,14 +1,20 @@
 import "../stylesheets/GeneratorForm.css";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+
 import { genArith, genLinear } from "../util/generatorFuncs";
+
 import Problem from "./Problem";
+import GeneratedProblemHeader from "./GeneratedProblemsHeader";
+import ProblemSetModal from "./ProblemSetModal";
 
 const GeneratorForm = () => {
   const { register, handleSubmit } = useForm();
 
   const [problems, setProblems] = useState([]);
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleIsModalOpen = () => setIsModalOpen(!isModalOpen);
+
   const onSubmit = (data) => {
     // console.log(data);
     const { topic, problemsCount } = data;
@@ -39,10 +45,16 @@ const GeneratorForm = () => {
       <button className="generate-button" type="submit">Generate</button>
     </form>
     <div className="generated-problems">
+      {problems.length>0 && <GeneratedProblemHeader handleSaveClick={toggleIsModalOpen} />}
       {problems.map((problem, index) => (
         <Problem key={`problem-${index}`} problem={problem} index={index} />
       ))}
     </div>
+    <ProblemSetModal
+      isOpen={isModalOpen}
+      onClose={toggleIsModalOpen}
+      problems={problems}
+    />
     </>
   )
 };
