@@ -1,5 +1,5 @@
 import "../stylesheets/GeneratorForm.css";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 
 import { genArith, genLinear } from "../util/generatorFuncs";

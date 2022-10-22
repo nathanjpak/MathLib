@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
+import { currentUserContext } from "../currentUserContext";
+
 const GeneratedProblemsHeader = ({handleSaveClick}) => {
- 
+  const { currentUser } = useContext(currentUserContext);
+
   return (
       <div className="generated-problems-header">
-        <button onClick={handleSaveClick}>Save Problem Set</button>       
+        {currentUser && (<button onClick={handleSaveClick}>Save Problem Set</button>)}   
+        {!currentUser && (<div>Log in to save problem sets!</div>)}    
       </div>
   )
 }
