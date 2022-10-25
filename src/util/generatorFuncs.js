@@ -1,4 +1,5 @@
 import axios from "axios";
+import { nanoid } from "nanoid";
 
 const API_ENDPOINT = process.env.REACT_APP_GEN_API_ENDPOINT || "https://mathlib.cyclic.app";
 
@@ -14,6 +15,9 @@ export const genArith = (count, updateState) => {
   })
     .then((response) => {
       problems = response.data;
+      for (let problem of problems) {
+        problem.id = nanoid();
+      }
       updateState(problems);
     })
 }
@@ -30,6 +34,9 @@ export const genLinear = (count, updateState) => {
   })
     .then((response) => {
       problems = response.data;
+      for (let problem of problems) {
+        problem.id = nanoid();
+      }
       updateState(problems);
     })
 }
