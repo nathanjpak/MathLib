@@ -1,12 +1,13 @@
 import "../stylesheets/GeneratorForm.css";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { genArith, genLinear } from "../util/generatorFuncs";
 
 import Problem from "./Problem";
 import GeneratedProblemHeader from "./GeneratedProblemsHeader";
-import ProblemSetModal from "./ProblemSetModal";
+// import ProblemSetModal from "./ProblemSetModal";
+import ProblemSetModal from "./modals/ProblemSetModal";
 
 const GeneratorForm = () => {
   const { register, handleSubmit } = useForm();

@@ -76,6 +76,13 @@ button {
   justify-content: space-between;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .flex-no-grow {
   flex-grow: 0;
 }

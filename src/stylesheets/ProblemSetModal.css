@@ -1,0 +1,14 @@
+@media (min-width: 800px) {
+  .problems-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.problems-container {
+  background-color: white;
+  border-radius: 0.75em;
+  padding: 1em;
+  overflow: auto;
+  display: grid;
+  gap: 1em;
+}
