@@ -10,10 +10,27 @@
   font-size: xx-large;
 }
 
+.set-dropdown-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: absolute;
+  right: 0;
+  top: 62px;
+  width: 100%;
+  height: calc(100vh - 62px);
+  z-index: 6;
+  font-size: xx-large;
+}
+
 @media (min-width: 800px) {
   .dropdown-menu {
     width: 25%;
     height: fit-content;
+    font-size: large;
+  }
+  .set-dropdown-menu {
+    width: 25%;
+    right: 25%;
     font-size: large;
   }
 }
