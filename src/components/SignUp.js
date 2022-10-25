@@ -28,7 +28,7 @@ const SignUp = () => {
         <h2>Create an Account</h2>
         <label>Username</label>
         <input className="input-100" {...register("username", {
-          required: "This field is required!",
+          required: "This field is required",
           minLength: {
             value: 6,
             message: "Username must be at least 6 characters!"
@@ -46,7 +46,7 @@ const SignUp = () => {
         
         <label>Email</label>
         <input className="input-100" type="email" {...register("email", {
-          required: "This field is required!",
+          required: "This field is required",
           pattern: {
             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
             message: "Please enter a valid email."
@@ -56,7 +56,7 @@ const SignUp = () => {
         
         <label>Password</label>
         <input className="input-100" type="password" {...register("password", {
-          required: "This field is required!",
+          required: "This field is required",
           minLength: {
             value: 8,
             message: "Password must be at least 8 characters."
