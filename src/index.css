@@ -86,3 +86,7 @@ button {
 .flex-no-grow {
   flex-grow: 0;
 }
+
+.grid-main-body {
+  grid-column: 2 / span 3;
+}

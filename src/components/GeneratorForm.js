@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 import { genArith, genLinear } from "../util/generatorFuncs";
 
-import Problem from "./Problem";
+import Problem from "./ProblemOnGenerator";
 import GeneratedProblemHeader from "./GeneratedProblemsHeader";
 // import ProblemSetModal from "./ProblemSetModal";
 import ProblemSetModal from "./modals/ProblemSetModal";

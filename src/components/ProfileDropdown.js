@@ -27,6 +27,8 @@ const ProfileDropdown = () => {
 
   const handleSetClick = (id) => {
     navigate(`/s/${id}`);
+    toggleShowMenu();
+    toggleShowSets();
   };
 
   const displayName = currentUser.firstName || currentUser.username || currentUser.email;

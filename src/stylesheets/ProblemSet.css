@@ -1,0 +1,33 @@
+.problem-set-container {
+  display: grid;
+  background-color: white;
+  border-radius: 1em;
+  gap: 1em;
+  padding: 1em;
+  width: 100%;
+}
+
+.problem-set-problem {
+  border-radius: 0.75em;
+  border: 2px solid grey;
+  padding: 0.75em;
+  box-sizing: border-box;
+}
+
+@media (min-width: 800px) {
+  .problem-set-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .problem-set-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1600px) {
+  .problem-set-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

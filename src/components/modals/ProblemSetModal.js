@@ -2,19 +2,17 @@ import "../../stylesheets/ProblemSetModal.css";
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "react-modal";
-// import { nanoid } from "nanoid";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { currentUserContext } from "../../currentUserContext";
 import ProblemSetModalProblem from "./ProblemSetModalProblem";
+import { createProblemSet } from "../../util/problemSetFuncs";
 
 const ProblemSetModal = ({isOpen, onClose, problems}) => {
-  const { currentUser } = useContext(currentUserContext);
+  const { currentUser, setCurrentUser } = useContext(currentUserContext);
 
-  // add ids to problems
-  // for (let problem of problems) {
-  //   problem.id = nanoid();
-  // }
+  const navigate = useNavigate();
 
   const { register, handleSubmit, setValue, getValues } = useForm();
   setValue("setProblems", problems);
@@ -23,11 +21,15 @@ const ProblemSetModal = ({isOpen, onClose, problems}) => {
     let setProblemValues = getValues("setProblems");
     const foundIndex = setProblemValues.findIndex(problem => problem.id === problemId);
     (foundIndex === -1) ? setProblemValues.push(problems[index]) : setProblemValues.splice(foundIndex, 1);
-    // setValue("setProblems", setProblemValues);
   }
 
   const onSubmit = (data) => {
-    console.dir(data);
+    createProblemSet(data, currentUser._id)
+      .then((response) => {
+        console.log(response.data);
+        setCurrentUser(response.data.user);
+        navigate(`/s/${response.data.problemSet._id}`);
+      })
   }
 
   return (
@@ -39,7 +41,7 @@ const ProblemSetModal = ({isOpen, onClose, problems}) => {
       className={"problem-set-modal"}
     >
       <form onSubmit={handleSubmit(onSubmit)} className="flex-col">
-        {currentUser && (<input {...register("name")} className="input-100" value={`Problem Set ${currentUser.problemSets.length + 1}`}/>)}
+        {currentUser && (<input {...register("name")} className="input-100" defaultValue={`Problem Set ${currentUser.problemSets.length + 1}`}/>)}
         
         <div className="problems-container">
           {problems.map((problem, index) => (
