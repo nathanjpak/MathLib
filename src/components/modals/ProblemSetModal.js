@@ -50,8 +50,8 @@ const ProblemSetModal = ({isOpen, onClose, problems}) => {
         </div>
 
         <div className="flex-row">
-          <button type="submit">Save</button>
           <button type="button" onClick={onClose}>Cancel</button>
+          <button type="submit">Save</button>
         </div>
       </form>
     </Modal>

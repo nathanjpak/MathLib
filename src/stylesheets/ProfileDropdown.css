@@ -32,6 +32,7 @@
     width: 25%;
     right: 25%;
     font-size: large;
+    max-height: 300px;
   }
 }
 
