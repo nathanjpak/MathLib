@@ -26,7 +26,6 @@ const ProblemSetModal = ({isOpen, onClose, problems}) => {
   const onSubmit = (data) => {
     createProblemSet(data, currentUser._id)
       .then((response) => {
-        console.log(response.data);
         setCurrentUser(response.data.user);
         navigate(`/s/${response.data.problemSet._id}`);
       })

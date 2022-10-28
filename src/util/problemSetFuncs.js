@@ -22,6 +22,14 @@ export const fetchProblemSet = (setId) => {
   })
 }
 
+export const updateProblemSet = (setId, data) => {
+  return axios({
+    method: "put",
+    url: `${API_ENDPOINT}/sets/${setId}`,
+    data: data,
+  })
+}
+
 export const deleteProblemSet = (setId, userId) => {
   return axios({
     method: "delete",

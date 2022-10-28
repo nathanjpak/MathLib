@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 import Problem from "./ProblemOnSet";
+import ProblemSetEditModal from "./modals/ProblemSetEditModal";
 
 import { currentUserContext } from "../currentUserContext";
 
@@ -15,13 +16,16 @@ const ProblemSet = () => {
 
   const navigate = useNavigate();
 
-  const [ currentSet, setCurrentSet ] = useState([]);
+  const [ currentSet, setCurrentSet ] = useState({});
   useEffect(() => {
     fetchProblemSet(urlArray[2])
       .then((res) => {
         setCurrentSet(res.data);
       })
   }, [urlArray])
+
+  const [ editIsOpen, setEditIsOpen ] = useState(false);
+  const toggleEditIsOpen = () => setEditIsOpen(!editIsOpen);
 
   const { currentUser, setCurrentUser } = useContext(currentUserContext);
 
@@ -50,7 +54,7 @@ const ProblemSet = () => {
       <div className="flex-row">
         <h2>{currentSet.name}</h2>
         {currentUser && (currentUser._id === currentSet.owner) && (<div className="flex-row">
-          <button>Edit</button>
+          <button onClick={toggleEditIsOpen}>Edit</button>
           <button onClick={handleDeleteClick}>Delete</button>
         </div>)}
       </div>
@@ -59,8 +63,15 @@ const ProblemSet = () => {
           <Problem key={index} problem={problem} index={index} />
         ))}
       </div>
-    </div>
-    
+      {(Object.keys(currentSet).length > 1) && <ProblemSetEditModal 
+        isOpen={editIsOpen}
+        onRequestClose={toggleEditIsOpen}  
+        name={currentSet.name}
+        problems={currentSet.problems}
+        setCurrentSet={setCurrentSet}
+        setId={currentSet._id}
+      />}
+    </div>    
   )
 };
 
