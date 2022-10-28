@@ -4,6 +4,8 @@ import { Outlet } from "react-router-dom";
 import { currentUserContext } from "./currentUserContext";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 import { fetchUser } from "./util/contextFuncs";
 
 const App = () => {
@@ -23,6 +25,7 @@ const App = () => {
       <currentUserContext.Provider value={value}>
         <Header />
         <Outlet />
+        <Footer />
       </currentUserContext.Provider>
     </div>
   )

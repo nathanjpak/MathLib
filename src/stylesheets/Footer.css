@@ -1,0 +1,11 @@
+.footer {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #87a2fb;
+  color: white;
+  grid-row: 4;
+  grid-column: 1 / span 5;
+}

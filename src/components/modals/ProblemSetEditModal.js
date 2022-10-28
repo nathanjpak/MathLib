@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import { useForm } from "react-hook-form";
 import PropTypes from "prop-types";
@@ -11,8 +10,6 @@ import { currentUserContext } from "../../currentUserContext";
 
 const ProblemSetEditModal = ({isOpen, onRequestClose, name, problems, setCurrentSet, setId}) => {
   const { register, handleSubmit, setValue } = useForm();
-
-  const navigate = useNavigate();
 
   const [setProblems, updateSetProblems] = useState(problems);
 
@@ -41,7 +38,6 @@ const ProblemSetEditModal = ({isOpen, onRequestClose, name, problems, setCurrent
             .then((res) => setCurrentUser(res.data));
         }
         setCurrentSet(response.data.updatedSet);
-        // navigate(`/s/${response.data.updatedSet._id}`);
         onRequestClose();
       })
   }
