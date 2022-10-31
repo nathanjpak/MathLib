@@ -58,7 +58,8 @@ button:active {
 
 .button-secondary {
   background-color: var(--button-secondary);
-  border-color: var(--button-shadow-secondary);
+  border: 2px solid var(--button-shadow-secondary);
+  box-sizing: border-box;
   box-shadow: 0em 4px var(--button-shadow-secondary);
 }
 
@@ -91,28 +92,23 @@ button:active {
   box-shadow: 0px 5px var(--shadow-primary);
 }
 
-.input-100,
-.input-50,
-.input-25 {
+.input {
   border: 0;
   box-sizing: border-box;
   padding: 0.5em;
   margin: 0.5em 0;
-  background-color: white;
   text-align: center;
   border-radius: 4px;
-}
-
-.input-100 {
   width: 100%;
 }
 
-.input-50 {
-  width: 50%;
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
-.input-25 {
-  width: 25%;
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .flex-row {
