@@ -44,7 +44,7 @@ button {
 
 .button-primary {
   background-color: var(--button-primary);
-  border-color: var(--button-shadow-primary);
+  border: 2px solid var(--button-shadow-primary);
   box-shadow: 0em 4px var(--button-shadow-primary);
 }
 

@@ -8,7 +8,7 @@ const GeneratedProblemsHeader = ({handleSaveClick}) => {
 
   return (
       <div className="generated-problems-header">
-        {currentUser && (<button onClick={handleSaveClick}>Save Problem Set</button>)}   
+        {currentUser && (<button className="button-secondary" onClick={handleSaveClick}>Save Problem Set</button>)}   
         {!currentUser && (<div>Log in to save problem sets!</div>)}    
       </div>
   )

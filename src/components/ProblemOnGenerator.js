@@ -12,10 +12,10 @@ const Problem = ({ problem, index }) => {
       <div className="problemTopRow">
         <h3>Problem {index+1}</h3>
         {!showSolution && (
-        <button onClick={toggleShowSolution}>Show Solution(s)</button>
+        <button className="button-tertiary" onClick={toggleShowSolution}>Show Solution(s)</button>
         )}
         {showSolution && (
-          <button onClick={toggleShowSolution}>Hide Solution(s)</button> 
+          <button className="button-tertiary" onClick={toggleShowSolution}>Hide Solution(s)</button> 
         )}
       </div> 
       <p><MathJax>{`$${problem.problem}$`}</MathJax></p>

@@ -43,19 +43,15 @@ const Login = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="login-form">
-      <div className="login-col-2">
-        <h2 className="login-header">Login</h2>
-        <label>Username</label>
-        <input className="input-100" {...register("username")}/>
-        <label>Password</label>
-        <input className="input-100" type="password" {...register("password")}/>
-        {invalidCreds && (<div className="login-error">Invalid username or password.</div>)}
-        <div className="flex-row">
-          <button type="submit" className="flex-no-grow">Submit</button>
-          <button type="button" className="flex-no-grow" onClick={handleAccountClick}>Create an Account</button>
-        </div>
-        {/* <button type="button" onClick={handleClick}>Get users</button>
-        <button type="button" onClick={handleLogout}>Logout</button> */}
+      <h2>Login</h2>
+      <label>Username</label>
+      <input className="input login-field" {...register("username")}/>
+      <label>Password</label>
+      <input className="input login-field" type="password" {...register("password")}/>
+      {invalidCreds && (<div className="login-error">Invalid username or password.</div>)}
+      <div className="flex-row">
+        <button type="submit" className="button-primary flex-no-grow">Submit</button>
+        <button type="button" className="button-secondary flex-no-grow" onClick={handleAccountClick}>Create an Account</button>
       </div>
     </form>
   )
