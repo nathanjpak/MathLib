@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className="title" onClick={handleTitleClick}><p><span className="m">M</span>athLib</p></div>
+      <div className="title" onClick={handleTitleClick} style={{cursor: "pointer"}}><p><span className="m">M</span>athLib</p></div>
       {!onLoginPage && !currentUser && (<button className="button-primary login-button" onClick={handleLoginClick}>Login</button>)}
       {currentUser && (<ProfileDropdown />)}
     </div>

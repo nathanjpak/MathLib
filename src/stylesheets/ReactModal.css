@@ -10,31 +10,3 @@
 .ReactModal__Overlay--before-close {
   opacity: 0;
 }
-
-.problem-set-modal {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
-  background: #6f38c5;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 1em;
-  padding: 2em;
-  outline: none;
-}
-
-.problem-set-modal-container {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 800px) {
-  .problem-set-modal {
-    padding: 2em 4em;
-  }
-  .problem-set-modal-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}

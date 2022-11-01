@@ -39,8 +39,8 @@ const ProblemSetModal = ({isOpen, onClose, problems}) => {
       ariaHideApp={false}
       className={"problem-set-modal"}
     >
-      <form onSubmit={handleSubmit(onSubmit)} className="flex-col">
-        {currentUser && (<input {...register("name")} className="input-100" defaultValue={`Problem Set ${currentUser.problemSets.length + 1}`}/>)}
+      <form onSubmit={handleSubmit(onSubmit)} className="flex-col" style={{gap: "1em"}}>
+        {currentUser && (<input {...register("name")} className="input login-field" defaultValue={`Problem Set ${currentUser.problemSets.length + 1}`}/>)}
         
         <div className="problems-container">
           {problems.map((problem, index) => (
@@ -48,9 +48,9 @@ const ProblemSetModal = ({isOpen, onClose, problems}) => {
           ))}
         </div>
 
-        <div className="flex-row">
-          <button type="button" onClick={onClose}>Cancel</button>
-          <button type="submit">Save</button>
+        <div className="flex-row" style={{marginTop: `calc(1em + 4px)`}}>
+          <button className="button-tertiary" type="button" onClick={onClose}>Cancel</button>
+          <button className="button-primary" type="submit">Save</button>
         </div>
       </form>
     </Modal>

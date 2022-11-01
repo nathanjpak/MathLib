@@ -5,7 +5,7 @@ const ProblemSetModalProblem = ({ problem, index, register, onChange }) => {
 
 
   return (
-    <div key={`Problem-${index}`}>
+    <div className="problem-set-modal-problem" key={`Problem-${index}`}>
       <label> Problem {" "} {index+1}
         <input type="checkbox" defaultChecked={true} value={problem} onChange={() => onChange(index)} />
         <span />

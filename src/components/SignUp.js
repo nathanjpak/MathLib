@@ -24,10 +24,10 @@ const SignUp = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="login-form">
-      <div className="login-col-2">
+      <div >
         <h2>Create an Account</h2>
         <label>Username</label>
-        <input className="input-100" {...register("username", {
+        <input className="input login-field" {...register("username", {
           required: "This field is required",
           minLength: {
             value: 6,
@@ -45,7 +45,7 @@ const SignUp = () => {
         <ErrorMessage errors={errors} name="username" render={({message}) => <p>{message}</p>}/>
         
         <label>Email</label>
-        <input className="input-100" type="email" {...register("email", {
+        <input className="input login-field" type="email" {...register("email", {
           required: "This field is required",
           pattern: {
             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -55,7 +55,7 @@ const SignUp = () => {
         <ErrorMessage errors={errors} name="email" render={({message}) => <p>{message}</p>}/>
         
         <label>Password</label>
-        <input className="input-100" type="password" {...register("password", {
+        <input className="input login-field" type="password" {...register("password", {
           required: "This field is required",
           minLength: {
             value: 8,
@@ -69,15 +69,13 @@ const SignUp = () => {
         <ErrorMessage errors={errors} name="password" render={({message}) => <p>{message}</p>}/>
         
         <label>Confirm Password</label>
-        <input className="input-100" type="password" {...register("confirmPassword", {
-          required: "This field is required!",
+        <input className="input login-field" type="password" {...register("confirmPassword", {
+          required: "This field is required",
           validate: value => value === watch("password") || "Passwords do not match"
         })} />
         <ErrorMessage errors={errors} name="confirmPassword" render={({message}) => <p>{message}</p>}/>
         
-        <div className="flex-row">
-          <button type="submit">Create account</button>
-        </div>
+        <button type="submit" className="button-primary">Create account</button>
       </div>
     </form>
   )
