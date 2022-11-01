@@ -35,23 +35,24 @@ const ProfileDropdown = () => {
 
   return (
     <>
-      <button className="login-button" style={{display: "flex", alignItems: "center"}} onClick={() => {
+      <button className="button-primary login-button" style={{display: "flex", alignItems: "center"}} onClick={() => {
         toggleShowMenu();
         setShowSets(false);
       }}>
-        <span style={{}}>{displayName}</span>
-        {!showMenu && <DownArrow style={{width: "28px", height: "28px", fill: "white"}}/>}
-        {showMenu && <UpArrow style={{width: "28px", height: "28px", fill: "white"}}/>}
+        <span>{displayName}</span>
+        {!showMenu && <DownArrow className="dropdown-arrow-down" style={{width: "28px", height: "28px", fill: "white"}}/>}
+        {showMenu && <UpArrow  className="dropdown-arrow-up" style={{width: "28px", height: "28px", fill: "white"}}/>}
       </button>
       {showMenu && (<div className="dropdown-menu">
-        <button className="dropdown-menu-button" onClick={toggleShowSets}>Your Problem Sets</button>
-        <button className="dropdown-menu-button">Account Settings</button>
-        <button onClick={handleLogoutClick} className="logout-button">Logout</button>
+        <button className="dropdown-menu-button button-secondary" onClick={toggleShowSets}>Your Problem Sets</button>
+        <button className="dropdown-menu-button button-secondary" disabled={true}>Coming Soon</button>
+        <button onClick={handleLogoutClick} className="logout-button button-tertiary">Logout</button>
       </div>)}
       {showSets && (<div className="set-dropdown-menu">
         {currentUser.problemSets.map(set => (
-          <button key={set._id} onClick={ () => handleSetClick(set._id) } className="dropdown-menu-button">{set.name}</button>
+          <button key={set._id} onClick={ () => handleSetClick(set._id) } className="dropdown-menu-button button-secondary">{set.name}</button>
         ))}
+        <button onClick={toggleShowSets} className="dropdown-menu-button button-secondary" style={{marginTop: "auto"}}>Back</button>
       </div>)}
     </>
   )
