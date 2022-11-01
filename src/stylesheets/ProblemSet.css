@@ -1,6 +1,14 @@
+.problem-set {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  background-color: var(--color-primary);
+  padding: 1.5em;
+  border-radius: 0.75em;
+}
+
 .problem-set-container {
   display: grid;
-  background-color: white;
   border-radius: 1em;
   gap: 1em;
   padding: 1em;

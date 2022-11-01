@@ -50,12 +50,12 @@ const ProblemSet = () => {
   }
 
   return (
-    <div className="flex-col grid-main-body">
+    <div className="problem-set">
       <div className="flex-row">
         <h2>{currentSet.name}</h2>
         {currentUser && (currentUser._id === currentSet.owner) && (<div className="flex-row">
-          <button onClick={toggleEditIsOpen}>Edit</button>
-          <button onClick={handleDeleteClick}>Delete</button>
+          <button className="button-secondary" onClick={toggleEditIsOpen}>Edit</button>
+          <button className="button-tertiary" onClick={handleDeleteClick}>Delete</button>
         </div>)}
       </div>
       <div className="problem-set-container">

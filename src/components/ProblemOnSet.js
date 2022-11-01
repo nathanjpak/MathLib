@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Problem = ({ index, problem }) => {
 
   return (
-    <div className="problem-set-problem">
+    <div className="generated-problem">
       <h3>Problem {index+1}</h3>
       <p><MathJax>{`$${problem.problem}$`}</MathJax></p>
       <p>Solution: {problem.solution}</p>
