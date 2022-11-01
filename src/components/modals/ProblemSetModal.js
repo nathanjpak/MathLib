@@ -50,7 +50,7 @@ const ProblemSetModal = ({isOpen, onClose, problems}) => {
 
         <div className="flex-row" style={{marginTop: `calc(1em + 4px)`}}>
           <button className="button-tertiary" type="button" onClick={onClose}>Cancel</button>
-          <button className="button-primary" type="submit">Save</button>
+          <button className="button-accept" type="submit">Save</button>
         </div>
       </form>
     </Modal>

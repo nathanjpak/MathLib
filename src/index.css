@@ -29,6 +29,7 @@ button {
   border: 0;
   border-radius: 4px;
   padding: 0.5em;
+  box-sizing: border-box;
   transition: transform 150ms ease-out 0ms, box-shadow 150ms ease-out 0ms;
 }
 
@@ -56,7 +57,6 @@ button {
 .button-secondary {
   background-color: var(--button-secondary);
   border: 2px solid var(--button-shadow-secondary);
-  box-sizing: border-box;
   box-shadow: 0em 4px var(--button-shadow-secondary);
 }
 
@@ -68,12 +68,35 @@ button {
 .button-tertiary {
   background-color: var(--button-tertiary);
   border: 2px solid var(--button-shadow-tertiary);
-  box-sizing: border-box;
   box-shadow: 0em 4px var(--button-shadow-tertiary);
 }
 
 .button-tertiary:active {
   box-shadow: 0em 1px var(--button-shadow-secondary);
+  transform: translateY(3px);
+}
+
+.button-accept {
+  background-color: #65d0d6;
+  color: white;
+  border: 2px solid #59b7bd;
+  box-shadow: 0em 4px #59b7bd;
+}
+
+.button-accept:active {
+  box-shadow: 0em 1px #59b7bd;
+  transform: translateY(3px);
+}
+
+.button-danger {
+  background-color: #dc3741;
+  color: white;
+  border: 2px solid #c23039;
+  box-shadow: 0em 4px #c23039;
+}
+
+.button-danger:active {
+  box-shadow: 0em 1px #c23039;
   transform: translateY(3px);
 }
 

@@ -55,7 +55,7 @@ const ProblemSet = () => {
         <h2>{currentSet.name}</h2>
         {currentUser && (currentUser._id === currentSet.owner) && (<div className="flex-row">
           <button className="button-secondary" onClick={toggleEditIsOpen}>Edit</button>
-          <button className="button-tertiary" onClick={handleDeleteClick}>Delete</button>
+          <button className="button-danger" onClick={handleDeleteClick}>Delete</button>
         </div>)}
       </div>
       <div className="problem-set-container">

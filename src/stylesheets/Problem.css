@@ -10,7 +10,7 @@
   max-width: 100%;
   height: 100%;
   border-radius: 0.5em;
-  transition: all 100ms ease-in 100ms;
+  transition: transform 100ms ease-in 100ms, box-shadow 100ms ease-in 100ms;
 }
 
 .generated-problem:hover {

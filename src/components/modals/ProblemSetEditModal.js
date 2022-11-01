@@ -50,17 +50,17 @@ const ProblemSetEditModal = ({isOpen, onRequestClose, name, problems, setCurrent
       ariaHideApp={false}
     >
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("name")} defaultValue={name}/>
+        <input className="input login-field" {...register("name")} defaultValue={name}/>
         <div>
           {setProblems.map((problem, index) => {
-            return (<div key={index}>
+            return (<div className="problem-set-modal-problem" key={index} style={{color: "black"}}>
               {problem.problem}
-              <button type="button" onClick={() => removeProblem(problem.id)}>Remove</button>
+              <button type="button" className="button-danger" onClick={() => removeProblem(problem.id)}>Remove</button>
             </div>)
           })}
         </div>
-        <button type="submit">Save changes</button>
-        <button type="button" onClick={onRequestClose}>Cancel</button>
+        <button className="button-accept" type="submit">Save changes</button>
+        <button className="button-tertiary" type="button" onClick={onRequestClose}>Cancel</button>
       </form>
     </Modal>
   )
