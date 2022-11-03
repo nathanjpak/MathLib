@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import Problem from "./ProblemOnSet";
 import ProblemSetEditModal from "./modals/ProblemSetEditModal";
 
-import { currentUserContext } from "../currentUserContext";
+import { currentUserContext } from "../Context";
 
 import { fetchProblemSet, deleteProblemSet } from "../util/problemSetFuncs";
 import { fetchUser } from "../util/contextFuncs";

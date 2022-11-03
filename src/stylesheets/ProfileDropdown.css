@@ -19,6 +19,7 @@
 
 .set-dropdown-menu {
   z-index: 6;
+  top: 0;
 }
 
 @media (min-width: 800px) {
@@ -28,10 +29,14 @@
     font-size: large;
   }
   .set-dropdown-menu {
-    width: 25%;
-    right: 25%;
+    width: 100%;
+    right: 100%;
+    top: -4px;
     font-size: large;
-    max-height: 300px;
+    height: fit-content;
+    max-height: calc(100vh - 62px);
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 

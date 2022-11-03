@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
-import { currentUserContext } from "../currentUserContext";
+import { currentUserContext } from "../Context";
 
 const GeneratedProblemsHeader = ({handleSaveClick}) => {
   const { currentUser } = useContext(currentUserContext);

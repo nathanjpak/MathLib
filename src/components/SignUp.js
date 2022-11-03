@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { signup, login } from "../util/loginFuncs";
 
-import { currentUserContext } from "../currentUserContext";
+import { currentUserContext } from "../Context";
 
 const SignUp = () => {
   const { register, formState: {errors}, handleSubmit, watch } = useForm();

@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { login } from "../util/loginFuncs";
 import { fetchUser } from "../util/contextFuncs";
 
-import { currentUserContext } from "../currentUserContext";
+import { currentUserContext } from "../Context";
 
 const Login = () => {
   const navigate = useNavigate();

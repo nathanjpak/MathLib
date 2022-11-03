@@ -1,7 +1,7 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  background-color: #6f38c5;
+  background-color: var(--color-primary);
   border-radius: 0.75em;
   padding: 1.75em;
   width: clamp(40%, 400px, 90%);

@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import { currentUserContext } from "../../currentUserContext";
+import { currentUserContext } from "../../Context";
 import ProblemSetModalProblem from "./ProblemSetModalProblem";
 import { createProblemSet } from "../../util/problemSetFuncs";
 

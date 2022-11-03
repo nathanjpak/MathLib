@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { updateProblemSet } from "../../util/problemSetFuncs";
 import { fetchUser } from "../../util/contextFuncs";
 
-import { currentUserContext } from "../../currentUserContext";
+import { currentUserContext } from "../../Context";
 
 const ProblemSetEditModal = ({isOpen, onRequestClose, name, problems, setCurrentSet, setId}) => {
   const { register, handleSubmit, setValue } = useForm();

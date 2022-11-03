@@ -14,7 +14,98 @@
 }
 
 .m {
+  background-color: var(--background);
+  color: var(--color-primary);
+  padding: 0.1em 0.1em;
+  margin-right: 0.1em;
+  border-radius: 2px;
+}
+
+.button-settings {
+  background: none;
+  padding: 0 0.25em;
+  font-size: 36px;
+}
+
+.span-settings-icon {
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;
+}
+
+.span-settings {
+  font-size: 16px;
+  vertical-align: middle;
+  opacity: 0;
+  transition: 0.5s;
+  position: relative;
+  left: -20px;
+  padding: 1px 4px;
+}
+
+.button-settings:hover .span-settings-icon {
+  transform: rotate(360deg);
+}
+
+.button-settings:hover .span-settings {
+  opacity: 1;
+  left: 0px;
+}
+
+.button-settings:active {
+  border: 1px solid white;
+}
+
+.input-settings {
+  background-color: var(--background);
+  color: var(--color-primary);
+}
+
+#option-default {
   background-color: #87a2fb;
   color: #6f38c5;
-  padding: 0.1em 0.1em;
+}
+
+#option-cookie {
+  background-color: #fffff0;
+  color: #ddbda4;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-primary);
+  border-radius: 0.5em;
+  padding: 1em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80%;
+  width: 80%;
+}
+
+.settings-overlay {
+  position: "fixed";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255 0.75);
+}
+
+@media (min-width: 600px) {
+  .settings {
+    width: 200px;
+    height: min-content;
+    position: fixed;
+    top: 60;
+    left: 0;
+    margin-left: 0;
+    margin-top: 60px;
+  }
 }

@@ -1,6 +1,7 @@
 :root {
   --background: #87a2fb;
   --text-primary: white;
+  --text-secondary: white;
   --color-primary: #6f38c5;
   --shadow-primary: #5f30a8;
   --button-primary: #65d0d6;
@@ -9,6 +10,18 @@
   --button-shadow-secondary: #7991e0;
   --button-tertiary: #cdcdcd;
   --button-shadow-tertiary: #b2b2b2;
+}
+
+[data-theme="cookie"] {
+  --background: #fffff0;
+  --text-primary: black;
+  --text-secondary: #ddbda4;
+  --color-primary: #ddbda4;
+  --shadow-primary: #c4a892;
+  --button-primary: #b08267;
+  --button-shadow-primary: #966f58;
+  --button-secondary: #fffff0;
+  --button-shadow-secondary: #e5e5d8;
 }
 
 body {
@@ -23,6 +36,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+hr {
+  border: 2px solid var(--shadow-primary);
+  width: 100%;
+  margin: 0;
+  margin-top: 4px;
 }
 
 button {
@@ -58,6 +78,7 @@ button {
   background-color: var(--button-secondary);
   border: 2px solid var(--button-shadow-secondary);
   box-shadow: 0em 4px var(--button-shadow-secondary);
+  color: var(--text-secondary);
 }
 
 .button-secondary:active {
@@ -101,6 +122,7 @@ button {
 }
 
 .container {
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
