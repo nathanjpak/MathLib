@@ -20,7 +20,7 @@ export const genArith = (count, setLoading, updateState) => {
       }
       updateState(problems);
     })
-    .finally(setLoading(false))
+    .finally(() => setLoading(false))
 }
 
 export const genLinear = (count, setLoading, updateState) => {
@@ -40,5 +40,5 @@ export const genLinear = (count, setLoading, updateState) => {
       }
       updateState(problems);
     })
-    .finally(setLoading(false))
+    .finally(() => setLoading(false))
 }

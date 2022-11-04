@@ -45,10 +45,10 @@ const GeneratorForm = () => {
       onSubmit={handleSubmit(onSubmit)}>
 
       <div className="input generator-field generator-message">
-        {(!loading) && (
+        {!loading && (
           <span>Welcome</span>
         )}
-        {(loading) && (
+        {loading && (
           <span>Generating...</span>
         )}
       </div>
