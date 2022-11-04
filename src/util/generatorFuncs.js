@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 
 const API_ENDPOINT = process.env.REACT_APP_GEN_API_ENDPOINT || "https://mathlib.cyclic.app";
 
-export const genArith = (count, updateState) => {
+export const genArith = (count, setLoading, updateState) => {
   let problems = [];
   updateState(problems);
   let queryString = "?";
@@ -20,9 +20,10 @@ export const genArith = (count, updateState) => {
       }
       updateState(problems);
     })
+    .finally(setLoading(false))
 }
 
-export const genLinear = (count, updateState) => {
+export const genLinear = (count, setLoading, updateState) => {
   let problems = [];
   updateState(problems);
   let queryString = "?";
@@ -39,4 +40,5 @@ export const genLinear = (count, updateState) => {
       }
       updateState(problems);
     })
+    .finally(setLoading(false))
 }

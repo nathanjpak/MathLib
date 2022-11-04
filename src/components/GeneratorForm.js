@@ -12,19 +12,20 @@ import ProblemSetModal from "./modals/ProblemSetModal";
 const GeneratorForm = () => {
   const { register, handleSubmit, setValue, getValues } = useForm();
 
+  const [loading, setLoading] = useState(false);
   const [problems, setProblems] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleIsModalOpen = () => setIsModalOpen(!isModalOpen);
 
   const onSubmit = (data) => {
-    // console.log(data);
+    setLoading(true);
     const { topic, problemsCount } = data;
     switch (topic) {
       case "linearEquations":
-        genLinear(problemsCount, setProblems);
+        genLinear(problemsCount, setLoading, setProblems);
         break;
       default:
-        genArith(problemsCount, setProblems);
+        genArith(problemsCount, setLoading, setProblems);
     }
   };
 
@@ -43,8 +44,13 @@ const GeneratorForm = () => {
     <form className="main-form" 
       onSubmit={handleSubmit(onSubmit)}>
 
-      <div className="input generator-field generator-message" style={{width: "50%", marginLeft: "auto", marginRight: "auto"}}>
-        Welcome
+      <div className="input generator-field generator-message">
+        {(!loading) && (
+          <span>Welcome</span>
+        )}
+        {(loading) && (
+          <span>Generating...</span>
+        )}
       </div>
 
       <div className="form-div-50">
@@ -81,7 +87,7 @@ const GeneratorForm = () => {
 
       
       
-      <button className="generator-button" type="submit">GENERATE</button>
+      <button className="generator-button" type="submit" disabled={loading}>GENERATE</button>
     </form>
     <div className="generated-problems">
       {problems.length>0 && <GeneratedProblemHeader handleSaveClick={toggleIsModalOpen} />}

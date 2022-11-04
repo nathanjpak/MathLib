@@ -75,6 +75,7 @@
   }
   .generator-message {
     grid-column: 1 / span 2;
+    width: 50%;
   }
   .generator-button {
     grid-column: 1 / span 2;
@@ -124,4 +125,9 @@ label {
   width: 20%;
   height: calc(100% - 4px);
   align-self: center;
+}
+
+.generator-message {
+  margin-left: auto;
+  margin-right: auto;
 }
