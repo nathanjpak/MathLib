@@ -41,7 +41,7 @@ const Header = () => {
       <button id="settings-button" className="button-settings" onClick={() => setSettingsIsOpen(!settingsIsOpen)}>
         <span id="settings-icon" className="span-settings-icon">{'\u2699'}</span>
         <span id="settings-span" className="span-settings">Settings</span>
-        </button>
+      </button>
       <div className="title" onClick={handleTitleClick} style={{cursor: "pointer"}}><p><span className="m">M</span>athLib</p></div>
       {!onLoginPage && !currentUser && (<button className="button-primary login-button" onClick={handleLoginClick}>Login</button>)}
       {currentUser && (<ProfileDropdown />)}
