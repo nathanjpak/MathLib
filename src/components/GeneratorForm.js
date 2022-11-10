@@ -45,11 +45,11 @@ const GeneratorForm = () => {
   const onSubmit = (data) => {
     // console.log(data);
     setLoading(true);
+    // May need to initially clear problems to properly render MathJax
+    setProblems([]);
     const { topic, problemsCount, filters } = data;
     generateProblems(topic, problemsCount, filters)
       .then((response) => {
-        // May need to initially clear problems to properly render MathJax
-        setProblems([]);
         let problems = response.data;
         for (let problem of problems) {
           problem.id = nanoid();
