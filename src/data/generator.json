@@ -1,0 +1,43 @@
+{
+  "Arithmetic": {
+    "filters": [
+      {
+        "name": "operations",
+        "type": "checkbox",
+        "list": ["addition", "subtraction", "multiplication", "division"],
+        "default": ["addition", "subtraction", "multiplication", "division"]
+      },
+      {
+        "name": "digits",
+        "type": "number",
+        "default": 2,
+        "min": 1,
+        "max": 5
+      }
+    ]
+  },
+  "Linear Equations": {
+    "filters": [
+      {
+        "name": "operations",
+        "type": "checkbox",
+        "list": ["addition", "subtraction", "multiplication"],
+        "default": ["addition", "subtraction", "multiplication"]
+      },
+      {
+        "name": "steps",
+        "type": "number",
+        "default": 2,
+        "min": 1,
+        "max": 5
+      },
+      {
+        "name": "digits",
+        "type": "number",
+        "default": 2,
+        "min": 1,
+        "max": 5
+      }
+    ]
+  }
+}

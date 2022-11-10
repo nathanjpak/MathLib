@@ -131,3 +131,20 @@ label {
   margin-left: auto;
   margin-right: auto;
 }
+
+.button-screen {
+  background-color: inherit;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  border: 2px solid var(--shadow-primary);
+}
+
+.button-screen:hover {
+  border-style: outset;
+}
+
+.button-screen:active {
+  border-style: inset;
+}
