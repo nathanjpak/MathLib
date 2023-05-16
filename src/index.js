@@ -29,7 +29,7 @@ const config = {
 
 root.render(
   <React.StrictMode>
-    <MathJaxContext version={3} config={config} onError={(error) => console.log(error)}>
+    <MathJaxContext version={3} config={config}>
       <RouterProvider router={router}/>
     </MathJaxContext>
   </React.StrictMode>

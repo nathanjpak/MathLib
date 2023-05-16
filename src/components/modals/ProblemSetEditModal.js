@@ -32,7 +32,6 @@ const ProblemSetEditModal = ({isOpen, onRequestClose, name, problems, setCurrent
     if (data.name !== name) submittedData.name = data.name;
     updateProblemSet(setId, submittedData)
       .then((response) => {
-        console.log(response);
         if (response.data.updatedUser) {
           fetchUser()
             .then((res) => setCurrentUser(res.data));
